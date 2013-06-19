@@ -1,0 +1,25 @@
+#
+# Excludes file for git tracking
+#
+
+*.pyc
+*.pdf
+*.png
+*.log
+*.tar.gz
+*.aux
+*.bbl
+*.blg
+*.ttt
+*.fff
+*.synctex.gz
+.DS_Store
+*.pages
+*.eps
+*.tif
+*.tmproj
+*.csv
+old/
+scratch/
+dist/
+build/

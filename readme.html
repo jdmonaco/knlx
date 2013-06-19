@@ -1,0 +1,40 @@
+<h2 id="knlx_readme">KNlx README</h2>
+
+<hr />
+
+<p><strong>Description</strong> A quick Python module for easily reading a subset of Neuralynx binary data files.</p>
+
+<p><strong>Author</strong> Joe Monaco</p>
+
+<p><strong>Organization</strong> Zanvyl Krieger Mind/Brain Institute, Johns Hopkins University, Baltimore, MD, USA</p>
+
+<hr />
+
+<h2 id="installation">Installation</h2>
+
+<p>This module requires Python (obviously), numpy, and bitstring. Numpy is very common, especially in any scientific distribution of Python; see <a href="http://scipy.org/">SciPy.org</a> for installation instructions. The bitstring library can be installed easily via <code>easy_install</code> or <code>pip</code> or <a href="https://pypi.python.org/pypi/bitstring/">downloaded from PyPI</a> for a <code>distutils</code> install. Then:</p>
+
+<pre><code>$ tar xzf knlx-0.01.tar.gz
+$ cd knlx-0.01/
+$ sudo python setup.py install
+</code></pre>
+
+<p>to install <code>knlx</code> into your current Python environment.</p>
+
+<h2 id="library_functions">Library Functions</h2>
+
+<p>In your own code, <code>knlx</code> can be imported by</p>
+
+<pre><code>import knlx
+</code></pre>
+
+<p>The library provides functions for reading the binary files created by Neuralynx data acquisition devices. Note that <code>knlx</code> was created to read files from place cell experiments, so capabilities are currently limited to experimental events (<code>.Nev</code>), video position-tracking (<code>.p</code>, with <code>timestamp</code>, <code>x</code>, <code>y</code>, and <code>direction</code> columns), and continuous records (<code>.Ncs</code>, usually for LFP/EEG recordings). The formats are based on the <a href="http://neuralynx.com/software/NeuralynxDataFileFormats.pdf">specifications (pdf)</a> provided by Neuralynx. The functions are</p>
+
+<ul>
+<li><code>read_event_file</code></li>
+<li><code>read_position_file</code></li>
+<li><code>write_position_ascii_file</code> </li>
+<li><code>read_ncs_file</code></li>
+</ul>
+
+<p>and they take the path to the Neuralynx file you want to read as the only argument. Obviously, more functionality could be added here (including allowing for more flexible data-format configurations), but these functions at least demonstrate a generalizable method for using bitstring to read out the binary formats of Neuralynx files into usable numpy arrays. </p>
